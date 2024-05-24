@@ -41,13 +41,13 @@ const Container = ({ children, tag, color, childProps }) => {
     setShowInfo(!showInfo);
   };
 
+  console.log(childProps?.style);
+
   return (
-    <Pressable onPress={onItemPress}>
-      <View onLayout={onContainerLayout}>
-        {renderBorders()}
-        {renderInfoItem()}
-        {children}
-      </View>
+    <Pressable onPress={onItemPress} onLayout={onContainerLayout}>
+      {renderBorders()}
+      {renderInfoItem()}
+      {children}
     </Pressable>
   );
 };
